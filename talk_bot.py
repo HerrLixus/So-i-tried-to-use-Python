@@ -42,6 +42,12 @@ def hau():
     elif phr1 == "Плохо":
         print("Очень жаль.")
         wud()
+    elif phr1 == "Норм":
+        print("Это хорошо.")
+        wud()
+    elif phr1 == "норм":
+        print("Это хорошо.")
+        wud()
     else:
         print('Я тебя не понял.')
 
