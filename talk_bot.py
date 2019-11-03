@@ -1,5 +1,6 @@
 def godb():
-    print('Ну ладно, пока.')
+    print('Пока.')
+
 
 def wud():
     print("Чем занимаешься?")
@@ -8,18 +9,31 @@ def wud():
     phr3 = input()
     if phr3 == "хорошо":
         print("Найс. Удачи.")
+        godb()
     elif phr3 == "Хорошо":
         print("Найс. Удачи.")
+        godb()
     elif phr3 == "нормально":
-        print("Найс. Удачи.")
+        print("Удачи.")
+        godb()
     elif phr3 == "Нормально":
-        print("Найс. Удачи.")
+        print("Удачи.")
+        godb()
+    elif phr3 == "норм":
+        print("Удачи.")
+        godb()
+    elif phr3 == "Норм":
+        print("Удачи.")
+        godb()
     elif phr3 == "плохо":
         print("Может, тебе стоит отдохнуть?")
+        godb()
     elif phr3 == "Плохо":
         print("Может, тебе стоит отдохнуть?")
+        godb()
     else:
         print('Я тебя не понял.')
+
 
 def hau():
     print('Как дела?')
@@ -65,4 +79,6 @@ def hello():
         godb()
     else:
         print('Я тебя не понял.')
+
+
 hello()
