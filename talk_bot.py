@@ -1,84 +1,40 @@
 def godb():
     print('Пока.')
 
-
 def wud():
     print("Чем занимаешься?")
     phr2 = input()
     print('Круто. как продвигается работа?')
     phr3 = input()
-    if phr3 == "хорошо":
+    if phr3 == "хорошо" or phr3 == "Хорошо" or phr3 == "нормально" or phr3 == "Нормально" or phr3 == "норм" or phr3 == "Норм":
         print("Найс. Удачи.")
         godb()
-    elif phr3 == "Хорошо":
-        print("Найс. Удачи.")
-        godb()
-    elif phr3 == "нормально":
-        print("Удачи.")
-        godb()
-    elif phr3 == "Нормально":
-        print("Удачи.")
-        godb()
-    elif phr3 == "норм":
-        print("Удачи.")
-        godb()
-    elif phr3 == "Норм":
-        print("Удачи.")
-        godb()
-    elif phr3 == "плохо":
-        print("Может, тебе стоит отдохнуть?")
-        godb()
-    elif phr3 == "Плохо":
+    elif phr3 == "плохо" or phr3 == "Плохо":
         print("Может, тебе стоит отдохнуть?")
         godb()
     else:
         print('Я тебя не понял.')
-
 
 def hau():
     print('Как дела?')
     phr1 = input()
-    if phr1 == "хорошо":
+    if phr1 == "хорошо" or phr1 == "Хорошо" or phr1 == "нормально" or phr1 == "Нормально" or phr1 == "Норм" or phr1 == "норм":
         print("Это хорошо.")
         wud()
-    elif phr1 == "Хорошо":
-        print("Это хорошо.")
-        wud()
-    elif phr1 == "нормально":
-        print("Это хорошо.")
-        wud()
-    elif phr1 == "Нормально":
-        print("Это хорошо.")
-        wud()
-    elif phr1 == "плохо":
+    elif phr1 == "плохо" or phr1 == "Плохо":
         print("Очень жаль.")
-        wud()
-    elif phr1 == "Плохо":
-        print("Очень жаль.")
-        wud()
-    elif phr1 == "Норм":
-        print("Это хорошо.")
-        wud()
-    elif phr1 == "норм":
-        print("Это хорошо.")
         wud()
     else:
         print('Я тебя не понял.')
-
 
 def hello():
     print('Привет!')
     phr = input()
-    if phr == 'привет':
+    if phr == 'привет' or phr == 'Привет':
         hau()
-    elif phr == 'Привет':
-        hau()
-    elif phr == 'пока':
-        godb()
-    elif phr == 'Пока':
+    elif phr == 'пока' or phr == 'Пока':
         godb()
     else:
         print('Я тебя не понял.')
-
 
 hello()
