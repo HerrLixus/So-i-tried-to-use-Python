@@ -1,21 +1,18 @@
 import numpy as np
-import random
+import numba
 
 
+@numba.jit(nopython=True)
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
 
-inputs_for_test = np.array([[1, 0, 0, 0],
-                            [0, 1, 1, 0],
-                            [0, 0, 1, 0],
-                            [1, 1, 0, 0]])
+inputs_for_test = np.array([])
 
-expected_outputs = np.array([[1, 0, 0, 1]]).T
-weights = np.array([random.randrange(-1, 1), random.randrange(-1, 1),
-                    random.randrange(-1, 1), random.randrange(-1, 1)], dtype=float)
+expected_outputs = np.array([])
 
 
+@numba.jit(nopython=True, parallel=True)
 def train(inputs, weight, expected):
     output = sigmoid(np.dot(inputs, weight))
     error = expected - output
@@ -24,14 +21,15 @@ def train(inputs, weight, expected):
     return weight
 
 
-def form_outputs(train_data, inp, wei, etal):
-    weight = wei
-    for i in range(2000):
+@numba.jit(nopython=True, parallel=True)
+def form_weights(train_data, etal):
+    weight = 2 * np.random.random((2, 1)) - 1
+    for i in range(200):
         weight = train(train_data, weight, etal)
-    out = sigmoid(np.dot(train_data, weight))
-    out = list(map(lambda x: x[0], out))
-    out = list(map(lambda x: 1 if x > 0.5 else 0, out))
-    return out
+    # out = sigmoid(np.dot(inp, weight))
+    # out = list(map(lambda x: x[0], out))
+    # out = list(map(lambda x: 1 if x > 0.5 else 0, out))
+    return weight
 
 
-print(form_outputs(inputs_for_test, np.array([0, 0, 0, 0]), weights, expected_outputs))
+# print(*form_outputs(inputs_for_test, np.array([0, 1, 0]), expected_outputs))

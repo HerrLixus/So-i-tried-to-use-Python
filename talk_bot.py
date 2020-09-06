@@ -1,6 +1,7 @@
 def godb():
     print('Пока.')
 
+
 def wud():
     print("Чем занимаешься?")
     phr2 = input()
@@ -15,6 +16,7 @@ def wud():
     else:
         print('Я тебя не понял.')
 
+
 def hau():
     print('Как дела?')
     phr1 = input()
@@ -27,6 +29,7 @@ def hau():
     else:
         print('Я тебя не понял.')
 
+
 def hello():
     print('Привет!')
     phr = input()
@@ -36,5 +39,6 @@ def hello():
         godb()
     else:
         print('Я тебя не понял.')
+
 
 hello()
